@@ -1,35 +1,39 @@
-# 项目安装和运行指南
+# Project Setup and Execution Guide
 
-本指南将引导你完成安装、构建和运行本项目的步骤。本项目展示了 Vue 项目与 React 组件之间的通信，仅作为示例，不适用于生产环境。
+This guide outlines the steps to install, build, and run this project, which serves as a demonstration of intercommunication between Vue and React components. Please note this project is designed for demonstration purposes only and is not suitable for production use.
 
-## 安装步骤
+## Installation Instructions
 
-确保在开始之前，你的开发环境已经安装了 `pnpm`。然后执行以下命令以安装项目依赖：
+Ensure `pnpm` is installed on your development environment before you begin. Install all necessary project dependencies with the following command:
 
 ```bash
 pnpm install
 ```
 
-## 构建 Remote 项目
+## Build Remote Application
 
-使用下面的命令来构建远程端产物：
+To build the remote components, run:
 
 ```bash
 pnpm run build:all
 ```
 
-## 运行预览
+## Preview the Application
+
+Execute the command below to start the project preview:
 
 ```bash
 pnpm run preview:all
 ```
 
-## 运行 Host 端
+## Launch Host Application
+
+Start the host application with:
 
 ```bash
 pnpm run dev:host
 ```
 
-## 注意事项
+## Important Notes
 
-- 本项目是一个演示示例，展示了如何在 Vue 和 React 之间进行组件通信。无法用于生产环境
+- This project is intended to illustrate component communication between Vue and React. It is not intended for use in production environments.
