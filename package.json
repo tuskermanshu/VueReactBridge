@@ -1,0 +1,30 @@
+{
+  "name": "module-federation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/**"
+  ],
+  "scripts": {
+    "dev:host": "pnpm --filter host-vue dev",
+    "build": "vite build",
+    "build:all": "pnpm -r --parallel run build",
+    "preview:all": "pnpm -r --parallel run preview",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "pattern": "^(?:(?:@(?:[a-z0-9-*~][a-z0-9-*._~]*)?/[a-z0-9-._~])|[a-z0-9-~])[a-z0-9-._~]*$",
+  "dependencies": {
+    "@originjs/vite-plugin-federation": "^1.3.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "vue": "3.4.29"
+    }
+  }
+}
