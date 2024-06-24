@@ -21,11 +21,11 @@ const Component: React.FC<ButtonProps> = ({ handleClick, title,count:pureCount }
     return (
         <>
         <div>
-            <h1>普通 element</h1>
+            <h3>common element</h3>
             <button onClick={handleRemoteClick}>{title} - {count}</button>
         </div>
         <div>
-            <h1>AntD element</h1>
+            <h3>Ant-design element</h3>
             <Button type="primary" onClick={handleRemoteClick}>{title} - {count}</Button>
         </div>
         

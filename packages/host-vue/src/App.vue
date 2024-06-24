@@ -15,15 +15,25 @@ function handleHostReactClick(value:number) {
 </script>
 
 <template>
-  <div>
-    <h1>Host Project in Vue</h1>
-    <h3>Remote Components in Vue</h3>
-    <remote-vue-btn title="host-in-vue" :count="count" @handle-click="handleHostVueClick"/>
-    <h3>Remote Components in React</h3>
-    <remote-react-btn title="host-in-react" :count="10" :handleClick="handleHostReactClick"/>
+    <h1>Host Application</h1>
+  <div class="container">
+    <div>
+      <h3>Remote Components in Vue</h3>
+      <remote-vue-btn title="host-in-vue" :count="count" @handle-click="handleHostVueClick"/>
+    </div>
+    <div>
+      <h3>Remote Components in React</h3>
+      <remote-react-btn title="host-in-react" :count="10" :handleClick="handleHostReactClick"/>
+    </div>
   </div>
 </template>
 
 <style scoped>
-
+.container{
+  display: flex;
+  width: 1000px;
+  justify-content: space-around;
+  align-items: center;
+  
+}
 </style>

@@ -30,11 +30,11 @@ function remoteClick (){
 <template>
     <div>
         <div>
-            <h1>普通 element</h1>
+            <h3>common element</h3>
             <button  @click="remoteClick">{{ props.title }} - {{ count }}</button>
         </div>
         <div>
-            <h1>Element-plus element</h1>
+            <h3>Element-plus element</h3>
             <el-button type="primary"  @click="remoteClick">{{ props.title }} - {{ count }}</el-button>
         </div>
     </div>

@@ -1,6 +1,8 @@
 import { createApp, defineAsyncComponent } from "vue";
 import React from "react";
 import ReactDOM from "react-dom";
+import ElementPlus from "element-plus";
+import "element-plus/dist/index.css";
 import "./style.css";
 import App from "./App.vue";
 
@@ -20,6 +22,7 @@ Object.defineProperty(window, "ReactDOM", {
   configurable: false,
 });
 
+app.use(ElementPlus);
 app.component("remote-vue-btn", remoteVueBtn);
 
 app.mount("#app");
