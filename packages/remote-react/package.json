@@ -23,7 +23,6 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "rollup-plugin-external-globals": "^0.10.0",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
   }
