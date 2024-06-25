@@ -2,35 +2,43 @@ import React from 'react';
 import { Button } from "antd";
 
 interface ButtonProps {
-    handleClick: (count:number) => void;
+    handleClick: (count: number) => void;
     title: string;
-    count:number
+    count: number;
 }
 
-const Component: React.FC<ButtonProps> = ({ handleClick, title,count:pureCount }) => {
+const Component: React.FC<ButtonProps> = React.forwardRef(({ handleClick, title, count: initialCount }, ref) => {
+    const [count, setCount] = React.useState(initialCount);
 
-
-    const [count,setCount] = React.useState(pureCount);
+    React.useImperativeHandle(ref, () => ({
+        incrementCount: () => {
+            setCount(prevCount => prevCount + 1);
+        },
+        decrementCount: () => {
+            setCount(prevCount => prevCount - 1);
+        }
+    }));
 
     function handleRemoteClick() {
-        console.log("remote click in React")
-        setCount(count + 1);
-        handleClick(count)
+        setCount(prevCount => {
+            const newCount = prevCount + 1;
+            handleClick(newCount);
+            return newCount;
+        });
     }
 
     return (
         <>
-        <div>
-            <h3>common element</h3>
-            <button onClick={handleRemoteClick}>{title} - {count}</button>
-        </div>
-        <div>
-            <h3>Ant-design element</h3>
-            <Button type="primary" onClick={handleRemoteClick}>{title} - {count}</Button>
-        </div>
-        
+            <div>
+                <h3>common element</h3>
+                <button onClick={handleRemoteClick}>{title} - {count}</button>
+            </div>
+            <div>
+                <h3>Ant-design element</h3>
+                <Button type="primary" onClick={handleRemoteClick}>{title} - {count}</Button>
+            </div>
         </>
-        );
-};
+    );
+});
 
 export default Component;
